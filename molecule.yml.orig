@@ -28,8 +28,10 @@ provisioner:
 verifier:
   name: testinfra
   options:
+    s: true
     v: true
   env:
+    PYTEST_ADDOPTS: '--color=yes'
     TESTVARS_ROLES_PLAYBOOKS: >-
       ${TAKELAGE_MOLECULE_VERIFIER_PLAYS:-../../playbook-site.yml}
   additional_files_or_dirs: ${TAKELAGE_MOLECULE_VERIFIER_FILES:-[]}
